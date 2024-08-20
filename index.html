@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对不起，亲爱的</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: #fde2e4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #5e503f;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 80%;
+        }
+        h1 {
+            color: #e56b6f;
+        }
+        button {
+            background-color: #e56b6f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #d85c5f;
+        }
+        #message, #compliment {
+            margin-top: 20px;
+            display: none;
+        }
+        .heart {
+            color: #e56b6f;
+            font-size: 24px;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>亲爱的，对不起 <span class="heart">❤️</span></h1>
+        <p>我知道我犯了一个大错误。我没有注意到你美丽的新发型，这让你感到受伤和失望。</p>
+        <p>我想向你真诚地道歉，并解释我的想法。你愿意听我说吗？</p>
+        <button onclick="showMessage()">是的，我愿意听</button>
+        <button onclick="showCompliment()">给我一些甜言蜜语</button>
+        <div id="message">
+            <p>亲爱的，我真的很抱歉没有注意到你美丽的新发型。我知道你花了很多心思和时间来打理你的头发，让它变得如此柔顺和美丽。我的疏忽让你感到受伤和不被重视，这绝对不是我的本意。</p>
+            <p>事实上，我总是被你的美丽所吸引，以至于有时会忽略细节的变化。但这并不是借口。我应该更加细心，更加关注你的每一个变化。你的美丽值得被赞美，你的努力值得被肯定。</p>
+            <p>我promise以后会更加留心你的每一个细节，不管是发型、妆容还是穿着。因为这些都是你美丽的一部分，都值得我去欣赏和赞美。</p>
+            <p>我很感激你给我机会解释。我希望你能原谅我的疏忽。我会努力成为一个更好的男朋友，一个更懂得欣赏你美丽的人。</p>
+        </div>
+        <div id="compliment"></div>
+    </div>
+
+    <script>
+        const compliments = [
+            "你的头发真的太美了，柔顺得像丝绸一样",
+            "你的发型让你整个人都更加光彩照人",
+            "我真的很喜欢你现在的发型，它完美地衬托了你的脸型",
+            "你的头发看起来健康又有光泽，真的很吸引人",
+            "这个发型让你看起来更加优雅和成熟"
+        ];
+
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+
+        function showCompliment() {
+            const compliment = compliments[Math.floor(Math.random() * compliments.length)];
+            document.getElementById('compliment').innerHTML = `<p>${compliment}</p>`;
+            document.getElementById('compliment').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
